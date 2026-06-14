@@ -715,41 +715,81 @@ unsafe_allow_html=True
 
 
 a,b,c = st.columns(
-    
+    [1,1,1]
 )
 
 
 with b:
+
     if st.button(
         "Save Today's Progress 💚",
-        use_container_width=True,
+        width="stretch",
         key="save_progress_btn"
     ):
+
+
         data = {
+
+
             "user_email":email,
+
+
             "exercise_completed":exercise,
+
+
             "water_completed":water,
+
+
             "diet_completed":diet,
+
+
             "sleep_completed":sleep,
+
+
             "meditation_completed":meditation,
+
+
             "completion_percentage":percentage,
+
+
             "date":today
+
+
         }
 
+
+
         existing = get_today_progress(
+
             email,
+
             today
+
         )
 
+
+
         if existing:
+
+
             update_today_progress(
+
                 email,
+
                 today,
+
                 data
+
             )
+
+
         else:
+
+
             save_progress(
+
                 data
+
             )
 
         # =====================================================

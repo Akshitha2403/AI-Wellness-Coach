@@ -369,6 +369,129 @@ translateY(0);
 
 }
 
+/* =====================================================
+   MOBILE RESPONSIVE FIX
+===================================================== */
+
+@media only screen and (max-width: 768px){
+
+.stApp{
+
+background:
+
+linear-gradient(
+135deg,
+#fff7fb,
+#f2fff7,
+#fffbea
+) !important;
+
+}
+
+/* all text visible */
+
+h1,h2,h3,h4,h5,h6,
+p,label,span,div{
+
+color:#333333 !important;
+
+}
+
+/* title fix */
+
+.title{
+
+font-size:35px !important;
+
+color:#333333 !important;
+
+-webkit-text-fill-color:#333333 !important;
+
+}
+
+/* subtitle */
+
+.subtitle{
+
+font-size:16px !important;
+
+color:#555 !important;
+
+}
+
+/* cards */
+
+.card{
+
+width:100% !important;
+
+padding:20px !important;
+
+margin-bottom:20px !important;
+
+background:white !important;
+
+}
+
+/* AI box */
+
+.ai-box{
+
+background:white !important;
+
+color:#333333 !important;
+
+font-size:16px !important;
+
+padding:20px !important;
+
+border-radius:25px !important;
+
+}
+
+/* inputs */
+
+input,
+textarea{
+
+color:#222 !important;
+
+background:white !important;
+
+}
+
+/* dropdown */
+
+div[data-baseweb="select"]{
+
+background:white !important;
+
+color:#222 !important;
+
+}
+
+/* buttons */
+
+.stButton button{
+
+width:100% !important;
+
+font-size:16px !important;
+
+}
+
+/* plotly charts */
+
+[data-testid="stPlotlyChart"]{
+
+overflow-x:auto !important;
+
+padding:10px !important;
+
+}
+
+}
+
 </style>
 """,
 unsafe_allow_html=True
@@ -418,27 +541,16 @@ active_days = len(
 
 
 total_habits = (
-
     df["exercise_completed"].sum()
-
     +
-
     df["water_completed"].sum()
-
     +
-
     df["diet_completed"].sum()
-
     +
-
     df["sleep_completed"].sum()
-
     +
-
     df["meditation_completed"].sum()
-
 )
-
 
 
 # =====================================================
@@ -447,7 +559,6 @@ total_habits = (
 
 
 c1,c2,c3 = st.columns(3)
-
 
 
 with c1:
@@ -466,7 +577,6 @@ with c1:
     )
 
 
-
 with c2:
 
     st.markdown(
@@ -481,7 +591,6 @@ with c2:
         """,
         unsafe_allow_html=True
     )
-
 
 
 with c3:
@@ -500,8 +609,8 @@ with c3:
     )
 
 
-
 st.write("---")
+
 
 # =====================================================
 # PROGRESS LINE CHART
@@ -574,8 +683,6 @@ st.plotly_chart(
     bar,
     use_container_width=True
 )
-
-
 
 
 # =====================================================

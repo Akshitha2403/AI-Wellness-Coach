@@ -400,6 +400,129 @@ transform:translateY(0);
 
 }
 
+/* =====================================================
+   MOBILE RESPONSIVE FIX
+===================================================== */
+
+@media only screen and (max-width: 768px){
+
+.stApp{
+
+background:
+
+linear-gradient(
+135deg,
+#fff7fb,
+#f2fff7,
+#fffbea
+) !important;
+
+}
+
+/* all text visible */
+
+h1,h2,h3,h4,h5,h6,
+p,label,span,div{
+
+color:#333333 !important;
+
+}
+
+/* title fix */
+
+.title{
+
+font-size:35px !important;
+
+color:#333333 !important;
+
+-webkit-text-fill-color:#333333 !important;
+
+}
+
+/* subtitle */
+
+.subtitle{
+
+font-size:16px !important;
+
+color:#555 !important;
+
+}
+
+/* cards */
+
+.card{
+
+width:100% !important;
+
+padding:20px !important;
+
+margin-bottom:20px !important;
+
+background:white !important;
+
+}
+
+/* AI box */
+
+.ai-box{
+
+background:white !important;
+
+color:#333333 !important;
+
+font-size:16px !important;
+
+padding:20px !important;
+
+border-radius:25px !important;
+
+}
+
+/* inputs */
+
+input,
+textarea{
+
+color:#222 !important;
+
+background:white !important;
+
+}
+
+/* dropdown */
+
+div[data-baseweb="select"]{
+
+background:white !important;
+
+color:#222 !important;
+
+}
+
+/* buttons */
+
+.stButton button{
+
+width:100% !important;
+
+font-size:16px !important;
+
+}
+
+/* plotly charts */
+
+[data-testid="stPlotlyChart"]{
+
+overflow-x:auto !important;
+
+padding:10px !important;
+
+}
+
+}
+
 </style>
 """,
 unsafe_allow_html=True
@@ -457,8 +580,7 @@ if isinstance(
     list
 ):
 
-
-    health_value = health_data[0]
+    health_value = health_data
 
 
 elif isinstance(
@@ -466,12 +588,10 @@ elif isinstance(
     str
 ):
 
-
-    health_value = health_data.split(",")[0]
+    health_value = health_data.split(",")
 
 
 else:
-
 
     health_value = "None"
 
@@ -629,130 +749,77 @@ st.subheader(
 )
 
 
-
 goal = profile["fitness_goal"]
-
 
 
 if goal == "Weight Loss":
 
-
     protein = 40
-
     carbs = 35
-
     fats = 25
-
 
 
 elif goal == "Muscle Building":
 
-
     protein = 35
-
     carbs = 45
-
     fats = 20
-
 
 
 elif goal == "Weight Gain":
 
-
     protein = 30
-
     carbs = 50
-
     fats = 20
-
 
 
 else:
 
-
     protein = 30
-
     carbs = 40
-
     fats = 30
 
 
-
-
-
 nutrition = pd.DataFrame(
-
     {
-
         "Type":[
-
             "Protein 🥩",
-
             "Carbohydrates 🍚",
-
             "Healthy Fats 🥑"
-
         ],
 
-
         "Value":[
-
             protein,
-
             carbs,
-
             fats
-
         ]
-
     }
-
 )
-
-
 
 
 fig = px.pie(
-
     nutrition,
-
     values="Value",
-
     names="Type",
-
     hole=0.55,
 
-
     color_discrete_sequence=[
-
         "#ff9acb",
-
         "#8ff5a2",
-
         "#ffe680"
-
     ]
-
 )
-
 
 
 fig.update_layout(
-
     showlegend=True,
-
     height=500
-
 )
 
 
-
 st.plotly_chart(
-
     fig,
-
     use_container_width=True
-
 )
 
 

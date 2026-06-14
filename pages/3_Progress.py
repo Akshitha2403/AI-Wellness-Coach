@@ -722,7 +722,8 @@ a,b,c = st.columns(
 with b:
     if st.button(
         "Save Today's Progress 💚",
-        use_container_width=True
+        use_container_width=True,
+        key="save_progress_btn"
     ):
         data = {
             "user_email":email,

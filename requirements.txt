@@ -1,0 +1,16 @@
+streamlit
+streamlit-lottie
+
+pandas
+numpy
+
+scikit-learn==1.6.1
+xgboost
+joblib
+
+plotly
+
+google-genai
+
+supabase
+python-dotenv

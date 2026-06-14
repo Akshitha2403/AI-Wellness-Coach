@@ -715,8 +715,11 @@ unsafe_allow_html=True
 
 
 a,b,c = st.columns(
-    
+    [1,1,1]
 )
+
+
+with b:
 
 
 with b:
